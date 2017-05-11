@@ -1,0 +1,13 @@
+D:\TaobaoInterface\TaobaoInterface\CodeGen\bin\Debug\CodeGen.exe.config
+D:\TaobaoInterface\TaobaoInterface\CodeGen\bin\Debug\CodeGen.exe
+D:\TaobaoInterface\TaobaoInterface\CodeGen\bin\Debug\CodeGen.pdb
+D:\TaobaoInterface\TaobaoInterface\CodeGen\bin\Debug\DataBase.dll
+D:\TaobaoInterface\TaobaoInterface\CodeGen\bin\Debug\Logging.dll
+D:\TaobaoInterface\TaobaoInterface\CodeGen\bin\Debug\Logging.pdb
+D:\TaobaoInterface\TaobaoInterface\CodeGen\bin\Debug\DataBase.pdb
+D:\TaobaoInterface\TaobaoInterface\CodeGen\obj\x86\Debug\CodeGen.csprojResolveAssemblyReference.cache
+D:\TaobaoInterface\TaobaoInterface\CodeGen\obj\x86\Debug\CodeGen.CodeGenerate.resources
+D:\TaobaoInterface\TaobaoInterface\CodeGen\obj\x86\Debug\CodeGen.Properties.Resources.resources
+D:\TaobaoInterface\TaobaoInterface\CodeGen\obj\x86\Debug\CodeGen.csproj.GenerateResource.Cache
+D:\TaobaoInterface\TaobaoInterface\CodeGen\obj\x86\Debug\CodeGen.exe
+D:\TaobaoInterface\TaobaoInterface\CodeGen\obj\x86\Debug\CodeGen.pdb

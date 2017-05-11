@@ -1,0 +1,4 @@
+D:\TaobaoInterface\TaobaoInterface\DataHelper\bin\Debug\DataHelper.dll
+D:\TaobaoInterface\TaobaoInterface\DataHelper\bin\Debug\DataHelper.pdb
+D:\TaobaoInterface\TaobaoInterface\DataHelper\obj\Debug\DataHelper.dll
+D:\TaobaoInterface\TaobaoInterface\DataHelper\obj\Debug\DataHelper.pdb

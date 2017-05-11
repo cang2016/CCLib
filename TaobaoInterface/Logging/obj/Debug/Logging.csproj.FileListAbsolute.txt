@@ -1,0 +1,4 @@
+D:\TaobaoInterface\TaobaoInterface\Logging\bin\Debug\Logging.dll
+D:\TaobaoInterface\TaobaoInterface\Logging\bin\Debug\Logging.pdb
+D:\TaobaoInterface\TaobaoInterface\Logging\obj\Debug\Logging.dll
+D:\TaobaoInterface\TaobaoInterface\Logging\obj\Debug\Logging.pdb

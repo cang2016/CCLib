@@ -1,0 +1,3 @@
+2017-04-09 20:58:54 193 [Debug] GetServerName
+2017-04-09 20:58:57 563 [Debug] GetDatabases
+2017-04-09 21:07:16 439 [Debug] GetTableName

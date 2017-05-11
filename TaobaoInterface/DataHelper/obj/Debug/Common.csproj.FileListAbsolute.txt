@@ -1,0 +1,6 @@
+D:\TaobaoInterface\TaobaoInterface\DataHelper\bin\Debug\Common.dll
+D:\TaobaoInterface\TaobaoInterface\DataHelper\bin\Debug\Common.pdb
+D:\TaobaoInterface\TaobaoInterface\DataHelper\bin\Debug\Newtonsoft.Json.dll
+D:\TaobaoInterface\TaobaoInterface\DataHelper\bin\Debug\Newtonsoft.Json.xml
+D:\TaobaoInterface\TaobaoInterface\DataHelper\obj\Debug\Common.dll
+D:\TaobaoInterface\TaobaoInterface\DataHelper\obj\Debug\Common.pdb
