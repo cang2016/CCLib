@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using DataBase;
 
 namespace CodeGen
 {
     public partial class CodeGenerate : Form
     {
+        CodeGenerateControl codeGenerate = null;
         public CodeGenerate()
         {
             InitializeComponent();
@@ -24,7 +27,7 @@ namespace CodeGen
 
         private void BindControls()
         {
-            CodeGenerateControl codeGenerate = new CodeGenerateControl();
+            codeGenerate = new CodeGenerateControl();
             this.lblCurrentServerValue.Text = codeGenerate.GetServerName();
 
             BindDatabases(codeGenerate);
@@ -123,19 +126,39 @@ namespace CodeGen
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             bool ret = false;
-            DialogResult dlg = MessageBox.Show("确定要生成代码吗?","信息提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            DialogResult dlg = MessageBox.Show("确定要生成代码吗?", "信息提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             if (DialogResult.OK == dlg)
             {
+                string connStr = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
+
+                if (!connStr.Contains(this.cmbDatabase.SelectedItem.ToString()))
+                {
+                    System.Data.SqlClient.SqlConnectionStringBuilder sqlConnBuilder = new System.Data.SqlClient.SqlConnectionStringBuilder();
+                    var conns = connStr.Split(new char[] { ';' }).ToDictionary(k => k.Split(new char[] { '=' })[0].Trim(), v => v);
+                    sqlConnBuilder.DataSource = conns["Data Source"].Split(new char[] { '=' })[1].Trim();
+                    sqlConnBuilder.InitialCatalog = this.cmbDatabase.SelectedItem.ToString();
+                    sqlConnBuilder.UserID = conns["User ID"].Split(new char[] { '=' })[1];
+                    sqlConnBuilder.Password = conns["Password"].Split(new char[] { '=' })[1].Trim();
+
+                    IDbConnection conn = new System.Data.SqlClient.SqlConnection(sqlConnBuilder.ToString());
+
+                    codeGenerate.database = new Database(conn, DataBase.Database.DBType.SqlServer);
+                }
+
+
                 GenerateCode gc = new GenerateCode();
-                CodeGenerateControl cgc = new CodeGenerateControl();
-                List<DataTable> tableList = cgc.GetTablesInDatabase(GetTableNameList());
+                //codeGenerate = new CodeGenerateControl();
+                List<DataTable> tableList = codeGenerate.GetTablesInDatabase(GetTableNameList());
+
+
+
                 if (string.IsNullOrWhiteSpace(txtFolder.Text) || string.IsNullOrWhiteSpace(txtNameSpace.Text))
                 {
                     MessageBox.Show("文件夹或命名空间不能为空");
                     return;
                 }
 
-                ret = gc.GenerateClassCode(tableList, txtNameSpace.Text, txtFolder.Text,txtClassName.Text.Trim());
+                ret = gc.GenerateClassCode(tableList, txtNameSpace.Text, txtFolder.Text, txtClassName.Text.Trim());
             }
 
             if (ret)

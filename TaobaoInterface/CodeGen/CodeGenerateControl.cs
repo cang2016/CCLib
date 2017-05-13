@@ -12,7 +12,7 @@ namespace CodeGen
 {
     public class CodeGenerateControl
     {
-        Database database = DatabaseFactory.CreateDatabase();
+      internal  Database database = DatabaseFactory.CreateDatabase();
         public string GetServerName()
         {
             SimpleLoger.Instance.Debug("GetServerName");
